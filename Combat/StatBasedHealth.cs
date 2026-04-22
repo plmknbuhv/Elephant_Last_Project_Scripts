@@ -10,11 +10,16 @@ namespace Code.Combat
         
         protected EntityStatCompo _statCompo;
         
+        public override void Initialize(ModuleOwner owner)
+        {
+            base.Initialize(owner);
+            _statCompo = _owner.GetModule<EntityStatCompo>();
+            
+            Debug.Assert(healthStat != null, "Player health component: stat component is null");
+        } 
+        
         public void AfterInitialize()
         {
-            _statCompo = _owner.GetModule<EntityStatCompo>();
-            Debug.Assert(healthStat != null, "Player health component: stat component is null");
-
             MaxHealth = (int)_statCompo.SubscribeStat(healthStat, HandleMaxMaxHealthChange, MaxHealth);
             SetUpHealth(MaxHealth);
         }
