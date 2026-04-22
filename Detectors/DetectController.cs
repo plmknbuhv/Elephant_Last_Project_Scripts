@@ -13,7 +13,7 @@ namespace Code.Detectors
     {
         protected virtual void Awake() { }
 
-        public void SetDetectorTransform(DetectorDataSO detectorData)
+        private void SetDetectorTransform(DetectorDataSO detectorData)
         {
             transform.localPosition = detectorData.localPosition;
             transform.localRotation = Quaternion.Euler(detectorData.localRotation);
