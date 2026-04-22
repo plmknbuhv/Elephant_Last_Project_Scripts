@@ -28,7 +28,7 @@ namespace Code.Combat
         
         protected ModuleOwner _owner;
         
-        public void Initialize(ModuleOwner owner)
+        public virtual void Initialize(ModuleOwner owner)
         {
             _owner = owner;
             SetUpHealth(MaxHealth);
