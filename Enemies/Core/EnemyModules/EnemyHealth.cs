@@ -6,7 +6,7 @@ namespace Code.Enemies.Core.EnemyModules
     {
         public void SetEnemyData(EnemyDataSO enemyData)
         {
-            MaxHealth = (int)_statCompo.SubscribeStat(healthStat, HandleMaxMaxHealthChange, MaxHealth);
+            MaxHealth = (int)_statCompo.GetBaseValue(healthStat);
             SetUpHealth(MaxHealth);
         }
     }
